@@ -8,6 +8,7 @@ public class Fan : ItemBase
     public override void ItemAction()
     {
         GameManager.InstanceGM.AddFanValue(_gageScore);
+        Destroy(gameObject);
         //GameManagerのゲージ加算関数を呼び、引数に自身が持つ値セット。
     }
 }
