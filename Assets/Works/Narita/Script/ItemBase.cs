@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 /// <summary>
 /// アイテムが最低限持つ機能
 /// </summary>
