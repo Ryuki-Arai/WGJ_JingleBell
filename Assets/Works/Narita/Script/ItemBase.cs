@@ -27,11 +27,10 @@ public abstract class ItemBase : MonoBehaviour
     {//右に移動する
         _rb.velocity = Vector2.left;
     }
-    public abstract void Action();
+    public abstract void ItemAction();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Action();
         Destroy(this);
     }
 }
