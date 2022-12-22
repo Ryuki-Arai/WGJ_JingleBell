@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     SoundScriptable _soundDataBase = null;
 
-    public SoundScriptable SoundDataBase => _soundDataBase;
+    public SoundScriptable SoundDataBase { get => _soundDataBase; set => _soundDataBase = value; }
 
     public void CallSound(SoundType type,int soundNumber)
     {
@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour
         audioSource.loop = sound.IsLoop;
         audioSource.Play();
 
-        if(sound.IsLoop)
+        if(!sound.IsLoop)
         {
             Destroy(audioSource, _soundDataBase.WaitDestorySecond);
         }
