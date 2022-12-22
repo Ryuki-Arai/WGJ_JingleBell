@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("プレイヤーの縦入力値")]
     float _h = default;
     [SerializeField, Header("プレイヤーの移動速度調整用値"), Range(1, 100)]
-    float _speed;
+    float _speed = 10;
     [SerializeField]Rigidbody2D _rb;
     Vector2 _ps;
     private void Update()
