@@ -12,6 +12,7 @@ public class Eggplant : ItemBase
     {
         GameManager.InstanceGM.AddScore(_score);
         GameManager.InstanceGM.AddFevarValue(_feverScore);
+        Destroy(gameObject);
         //GameManagerのスコア加算関数を呼び、引数に自身が持つ値セット。
     }
 }
