@@ -20,7 +20,7 @@ public class PlayerPresenter : MonoBehaviour
         _playerController.IsPushed
             .Subscribe(x =>
             {
-                if(x && GameManager.InstanceGM.FanValue.Value >= )
+                if(x)
                 {
                     _uiManager.Fan();
                 }
