@@ -2,12 +2,12 @@
 
 public class GameManager
 {
-    static GameManager _instanceGM;
+    static GameManager _instanceGM = new GameManager();
 
     static SoundManager _instanceSM = new SoundManager();
     static SceneManager _instanceScene = null;
 
-    GameState _gameState;
+    GameState _gameState = GameState.PlayGame;
 
     ReactiveProperty<int> _touchCigarettes
         = new ReactiveProperty<int>();

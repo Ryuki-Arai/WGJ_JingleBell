@@ -9,9 +9,9 @@ public class SoundInitializer : MonoBehaviour
 
     private void Awake()
     {
-        if (Test._instance.SoundDataBase == null)
+        if (GameManager.InstanceSM.SoundDataBase == null)
         {
-            Test._instance.SoundDataBase = _soundScriptableObj;
+            GameManager.InstanceSM.SoundDataBase = _soundScriptableObj;
         }
     }
 }
