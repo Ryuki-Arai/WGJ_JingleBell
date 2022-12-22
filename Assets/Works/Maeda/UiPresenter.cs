@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UiPresenter : MonoBehaviour , IDisposable
 {
+    [SerializeField]
     UiManager _view;
 
     CompositeDisposable _compositeDisposable = new CompositeDisposable();
@@ -19,31 +20,31 @@ public class UiPresenter : MonoBehaviour , IDisposable
             .Subscribe(x =>
             {
                 _view.IndicateSmoke();
-            }).AddTo(_compositeDisposable);
+            }).AddTo(this);
 
         GameManager.InstanceGM.SumScore
             .Subscribe(x =>
             {
                 _view.ScoreInterpolation(x);
-            }).AddTo(_compositeDisposable);
+            }).AddTo(this);
 
         GameManager.InstanceGM.FanValue
             .Subscribe(x =>
             {
                 _view.FanGaugeInterpolation(x);
-            }).AddTo(_compositeDisposable);
+            }).AddTo(this);
 
         GameManager.InstanceGM.FeverValue
             .Subscribe(x =>
             {
                 _view.FevarGaugeInterpolation(x);
-            }).AddTo(_compositeDisposable);
+            }).AddTo(this);
 
         _view.ChangeState
             .Subscribe(x =>
             {
             GameManager.InstanceGM.ChangeState(x);
-            }).AddTo(_compositeDisposable);
+            }).AddTo(this);
     }
 
     public void Dispose()
