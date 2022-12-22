@@ -23,7 +23,17 @@ public class GameManager
 
 
     public GameState State => _gameState;
-    public static GameManager InstanceGM => _instanceGM;
+    public static GameManager InstanceGM
+    {
+        get
+        {
+            if(_instanceGM == null)
+            {
+                _instanceGM = new GameManager();
+            }
+            return _instanceGM;
+        }
+    }
 
     public static SoundManager InstanceSM => _instanceSM;
     public static SceneManager InstanceScene { get => _instanceScene; set => _instanceScene = value; }
