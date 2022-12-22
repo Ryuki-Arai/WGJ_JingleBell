@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector2 _ps;
     ReactiveProperty<bool> _isPushed = new ReactiveProperty<bool>();
 
-    IReadOnlyReactiveProperty<bool> IsPushed => _isPushed;
+    public IReadOnlyReactiveProperty<bool> IsPushed => _isPushed;
     public Vector2 Ps { get => _ps;}
 
     void Start()
