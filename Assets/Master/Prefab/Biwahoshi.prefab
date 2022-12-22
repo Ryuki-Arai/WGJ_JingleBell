@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4212652636051904362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7249994, y: 25.775, z: 0}
+  m_LocalPosition: {x: 0.7249994, y: -25.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8284590878604010605}
   m_Bounds:
-    m_Center: {x: -0.0019698143, y: 0.000002861023, z: 0}
-    m_Extent: {x: 6.24303, y: 8.255, z: 0}
+    m_Center: {x: -0.0019698143, y: 20, z: 0}
+    m_Extent: {x: 6.24303, y: 8.255001, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5526860752255550238}
   m_LocalRotation: {x: 0, y: 0, z: 0.7524771, w: 0.6586184}
-  m_LocalPosition: {x: 0.5874424, y: 18.81282, z: 0}
+  m_LocalPosition: {x: 0.5874424, y: -12.062181, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -226,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5623515115611710405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94096, y: -10.48, z: 0}
+  m_LocalPosition: {x: 0.94096, y: -2.2, z: 0}
   m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -314,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7331718303718163974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.750001, y: 23.585, z: 0}
+  m_LocalPosition: {x: -1.750001, y: -27.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -392,8 +392,8 @@ MonoBehaviour:
   - {fileID: 5602343873069721578}
   - {fileID: 5919061196309586448}
   m_Bounds:
-    m_Center: {x: 1.0052016, y: 0.06859183, z: 0}
-    m_Extent: {x: 3.746703, y: 3.9331212, z: 0}
+    m_Center: {x: 0.0014665127, y: 19.999996, z: 0}
+    m_Extent: {x: 3.1685348, y: 3.9849977, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
