@@ -17,9 +17,6 @@ public class UiManager : MonoBehaviour
     [SerializeField, Header("タバコのイメージ画像")]
     Image _smongImage;
 
-    [SerializeField, Header("フィーバーのイメージ画像")]
-    Image _fevarImage;
-
     [SerializeField, Header("扇ゲージのスライダー")]
     Slider _fanGaugeSlider;
 
@@ -41,7 +38,7 @@ public class UiManager : MonoBehaviour
     [SerializeField, Header("煙草を表示する時間")]
     float _smongTime;
 
-    [SerializeField, Header("フィーバーの時間")]
+    [SerializeField, Header("フィーバーを表示する時間")]
     float _fevarTime;
 
     ReactiveProperty<GameState> _changeState = new ReactiveProperty<GameState>();
@@ -59,7 +56,10 @@ public class UiManager : MonoBehaviour
     float _imageInterval;
 
     //画像表示の計測用
-    float _imgTimer;
+    float _eventTimer;
+
+    //煙草の煙のアニメーション
+    Animator _smongAni;
 
     public IReadOnlyReactiveProperty<GameState> ChangeState => _changeState;
 
@@ -125,11 +125,11 @@ public class UiManager : MonoBehaviour
     {
         if (_changeState.Value != GameState.Fevar && _changeState.Value != GameState.Finish) 
         {
-            if (_imgTimer > 0) { StartCoroutine(ImageTime()); }
+            if (_eventTimer > 0) { StartCoroutine(EventTime()); }
 
             _imageInterval = _smongTime;
-            _imgTimer = 0;
-            //_smongImageのアニメーションを再生
+            _eventTimer = 0;
+            _smongAni.Play("SmokeStart");
         }
     }
 
@@ -140,16 +140,17 @@ public class UiManager : MonoBehaviour
     {
         if (_fevarGaugeSlider.value == _fevarSliderValueMax)
         {
-            if (_imgTimer > 0) { StartCoroutine(ImageTime()); }
+            if (_eventTimer > 0) { StartCoroutine(EventTime()); }
 
             _imageInterval = _fevarTime;
-            _imgTimer = 0;
+            _eventTimer = 0;
 
             if (_smongImage.enabled)
             {
-                //消すアニメーションを再生
+                _smongAni.Play("SmokeEnd");
             }
-            //_fevarImageのアニメーションを再生
+
+            _changeState.Value = GameState.Fevar; 
         }
     }
 
@@ -159,7 +160,7 @@ public class UiManager : MonoBehaviour
         {
             FanGaugeInterpolation(0);
 
-            //消すアニメーションを再生
+            _smongAni.Play("SmokeEnd");
         }
     }
 
@@ -174,26 +175,26 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ImageTime()
+    private IEnumerator EventTime()
     {
-        while (_changeState.Value != GameState.Finish && _imageInterval > _imgTimer)
+        while (_changeState.Value != GameState.Finish && _imageInterval > _eventTimer)
         {
             yield return new WaitForEndOfFrame();
 
-            _imgTimer += Time.deltaTime;
+            _eventTimer += Time.deltaTime;
         }
 
-        if (_imageInterval < _imgTimer) 
+        if (_imageInterval < _eventTimer) 
         {
-            _imgTimer = 0;
+            _eventTimer = 0;
 
             if (_smongImage.enabled)
             {
-                //煙草を消すアニメーションを再生
+                _smongAni.Play("SmokeEnd");
             }
             else 
             {
-                //フィーバーを終えるアニメーションを再生
+                _changeState.Value = GameState.PlayGame;
             }
         }
     }
