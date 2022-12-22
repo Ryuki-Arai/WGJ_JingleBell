@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7102024526182528700}
   - component: {fileID: 3044657946905205989}
   - component: {fileID: -323830392023176969}
+  - component: {fileID: 3147255126421664278}
   m_Layer: 0
   m_Name: Cigarettes
   m_TagString: Untagged
@@ -121,3 +122,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &3147255126421664278
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456515783436210167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.9633333
