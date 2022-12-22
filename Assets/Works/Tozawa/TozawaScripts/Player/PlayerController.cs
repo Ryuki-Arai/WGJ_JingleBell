@@ -9,15 +9,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Tooltip("プレイヤーの縦入力値")]
-    float _h = default;
+    float _v = default;
     [SerializeField, Header("プレイヤーの移動速度調整用値"), Range(1, 100)]
     float _speed = 10;
     [SerializeField]Rigidbody2D _rb;
     Vector2 _ps;
     private void Update()
     {
-        _h = Input.GetAxisRaw("Horizontal");
-        _ps.y = _h * _speed;
+        _v = Input.GetAxisRaw("Vertical");
+        
     }
     private void FixedUpdate()
     {
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void PlayerMove()
     {
+        _ps.y = _v * _speed;
         _rb.velocity = _ps.normalized;
     }
     private void OnTriggerEnter2D(Collider2D collision)
