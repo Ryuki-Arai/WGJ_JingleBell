@@ -4,7 +4,9 @@ public class GameManager
 {
     static GameManager _instanceGM;
 
-    //public SoundManager InstanceSM
+    static SoundManager _instanceSM = new SoundManager();
+    static SceneManager _instanceScene = null;
+
 
     ReactiveProperty<int> _touchCigarettes
         = new ReactiveProperty<int>();
@@ -19,6 +21,9 @@ public class GameManager
         = new ReactiveProperty<float>();
 
     public static GameManager InstanceGM => _instanceGM;
+
+    public static SoundManager InstanceSM => _instanceSM;
+    public static SceneManager InstanceScene => _instanceScene;
 
     public IReadOnlyReactiveProperty<int> TouchCigarettes => _touchCigarettes;
 
