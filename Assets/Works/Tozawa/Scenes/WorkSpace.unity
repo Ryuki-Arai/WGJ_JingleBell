@@ -123,6 +123,41 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &380022405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5423764088664311057, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
+  m_PrefabInstance: {fileID: 5423764087818706632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &380022406 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5423764087818706635, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
+  m_PrefabInstance: {fileID: 5423764087818706632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &380022409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5423764088664311058, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
+  m_PrefabInstance: {fileID: 5423764087818706632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380022405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad8be28224d11d4e9449551b7f7d3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &380022412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380022405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8863b68f0606315459bf1e6fb4324dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAnim: {fileID: 380022406}
+  _pc: {fileID: 380022409}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,10 +249,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2287295308441686817, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5423764088664311057, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -266,5 +297,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5423764088664311061, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b696c56e11b3be4e802df9b9a28280a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe174e8772ba16a4885fcb3492c837f3, type: 3}

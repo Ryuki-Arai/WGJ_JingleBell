@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76500477df1aa644bc61b97e49ced00, type: 3}
+  m_Name: Sound
+  m_EditorClassIdentifier: 
+  _soundPlayer: {fileID: 881644221658241255, guid: 775d63d6d149d1e4d8021986712bd55d, type: 3}
+  _soundAllay:
+    BGM:
+    - Clip: {fileID: 8300000, guid: c7b3d70a55119224cbe321f23d943e1c, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: dcf3eea6694129644821fe43334bc184, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: f805cff2a5545b8459d256fea59ecde4, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: be95f096a2d152b43ad75d03c7cdb924, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: fd62c59fe2f4fff43a9eed356658fdae, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: fd62c59fe2f4fff43a9eed356658fdae, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    SE:
+    - Clip: {fileID: 8300000, guid: 73150d46458684648be78a8f7bb8fd02, type: 3}
+      IsLoop: 0
+      Volume: 0.6
+    - Clip: {fileID: 8300000, guid: 7c01e61a34afa05438f28585583ca6d8, type: 3}
+      IsLoop: 0
+      Volume: 0.6
+    - Clip: {fileID: 8300000, guid: 7f48f497fd53cbd4c95719cff6116321, type: 3}
+      IsLoop: 0
+      Volume: 0.6
+    - Clip: {fileID: 8300000, guid: ce0070c86b82a4b4db5dea6d56c51dfa, type: 3}
+      IsLoop: 0
+      Volume: 0.6
+    - Clip: {fileID: 8300000, guid: 0031f24dd35ab514fbdeee37f110d608, type: 3}
+      IsLoop: 0
+      Volume: 0.6
+  _waitDestorySecond: 1
