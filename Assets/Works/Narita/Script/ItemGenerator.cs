@@ -29,12 +29,25 @@ public class ItemGenerator : MonoBehaviour
 
     private void Update()//フィーバー時とそうでない時で処理を分けます。
     {
+
         _timeCount += Time.deltaTime;
-        if (_timeCount >= _interval)
-        {          
-            CreateItem();
-            _timeCount = 0;
-            _interval = Random.Range(_minInterval, _maxInterval);
+        if (GameManager.InstanceGM.State != GameState.Fevar)
+        {
+            if (_timeCount >= _interval)
+            {
+                CreateItem();
+                _timeCount = 0;
+                _interval = Random.Range(_minInterval, _maxInterval);
+            }
+        }
+        else
+        {
+            if (_timeCount >= _minInterval)
+            {
+                CreateItemOnFever();
+                _timeCount = 0;
+            }
+            
         }
     }
     /// <summary>
@@ -49,6 +62,7 @@ public class ItemGenerator : MonoBehaviour
         if (_rand >= _allItems[_itemNum].Probability)
         {
             Instantiate(_allItems[_itemNum], _generatePos);
+            //サウンドを鳴らす
         }
         else
         {
