@@ -11,7 +11,7 @@ public class ResultChange : MonoBehaviour
     Sprite _normalImage = null;
     [SerializeField]
     Sprite _happyImage = null;
-    Sprite _panelImage = null;
+    Image _panelImage = null;
     [SerializeField]
     GameObject _panel = null;
     [SerializeField]
@@ -25,23 +25,23 @@ public class ResultChange : MonoBehaviour
 
     private void Start()
     {
-        _panelImage = _panel.GetComponent<Sprite>();
+        _panelImage = _panel.GetComponent<Image>();
     }
     // Update is called once per frame
     public void Result(int score)
     {
         if(_happyScore <= score)
         {
-            _panelImage = _happyImage;
+            _panelImage.sprite = _happyImage;
         }
         else if(_normalScore <= score)
         {
-            _panelImage = _normalImage;
+            _panelImage.sprite = _normalImage;
         }
         else 
         {
-            _panelImage = _badImage;
+            _panelImage.sprite = _badImage;
         }
-        _scoreText.text = score.ToString();
+        _scoreText.text = "Score" + ":" + score.ToString();
     }
 }
