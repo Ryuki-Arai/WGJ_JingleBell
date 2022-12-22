@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cigarettes : ItemBase
 {
-    public override void Action()
+    public override void ItemAction()
     {
         //GameManagerの関数を呼ぶ。
     }
