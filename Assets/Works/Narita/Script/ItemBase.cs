@@ -33,6 +33,6 @@ public abstract class ItemBase : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameManager.InstanceSM.CallSound(SoundType.SE,1);
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
