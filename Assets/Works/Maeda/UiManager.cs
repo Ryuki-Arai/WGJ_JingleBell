@@ -8,8 +8,8 @@ using Unity.VisualScripting;
 
 public class UiManager : MonoBehaviour
 {
-    //[SerializeField  , Header("リザルトの結果を表示する")]
-    //ResultChange _resultChange;
+    [SerializeField, Header("リザルトの結果を表示する")]
+    ResultChange _resultChange;
 
     [SerializeField, Header("スコアを表示するテキスト")]
     Text _scoreText;
@@ -189,7 +189,7 @@ public class UiManager : MonoBehaviour
 
         if (_timer <= 0) 
         {
-            //_resultChange.Result();
+            _resultChange.Result(int.Parse(_scoreText.text));
             _changeState.Value = GameState.Finish;
             
         }
