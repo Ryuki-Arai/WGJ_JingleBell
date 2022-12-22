@@ -8,7 +8,7 @@ public struct SoundElements
 {
     public AudioClip Clip; //サウンドのクリップ
     public bool IsLoop; //ループするかどうか
-    public float volume; //ループする時間
+    public float Volume; //ループする時間
 }
 
 /// <summary>
