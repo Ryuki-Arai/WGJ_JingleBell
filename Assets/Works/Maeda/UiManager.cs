@@ -11,6 +11,9 @@ public class UiManager : MonoBehaviour
     [SerializeField, Header("リザルトの結果を表示する")]
     ResultChange _resultChange;
 
+    [SerializeField, Header("リザルトのキャンバス")]
+    ResultChange _resultCanvas;
+
     [SerializeField, Header("スコアを表示するテキスト")]
     Text _scoreText;
 
@@ -76,6 +79,8 @@ public class UiManager : MonoBehaviour
         _timeText.text = _timer.ToString("00");
 
         _smongAni = _smongImage.GetComponent<Animator>();
+
+        _resultCanvas.enabled = false;
 
         StartCoroutine(GameTime());
     }
@@ -190,9 +195,11 @@ public class UiManager : MonoBehaviour
 
         if (_timer <= 0) 
         {
-            _resultChange.Result(int.Parse(_scoreText.text));
             _changeState.Value = GameState.Finish;
-            
+            _timer = 0;
+            _eventTimer = 0;
+            _resultCanvas.enabled = true;
+            _resultChange.Result(int.Parse(_scoreText.text));
         }
     }
 
