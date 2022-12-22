@@ -68,17 +68,15 @@ public class UiManager : MonoBehaviour
 
     private void Start()
     {
-        //_fevarGaugeSlider.maxValue = _fevarSliderValueMax;
-        //_fanGaugeSlider.maxValue = _fanSliderValueMax;
+        _fevarGaugeSlider.maxValue = _fevarSliderValueMax;
+        _fanGaugeSlider.maxValue = _fanSliderValueMax;
 
-        //_timer = _gameTime;
-        //_timeText.text = _timer.ToString("00");
+        _timer = _gameTime;
+        _timeText.text = _timer.ToString("00");
 
         _smongAni = _smongImage.GetComponent<Animator>();
 
-        IndicateSmoke();
-
-        //StartCoroutine(GameTime());
+        StartCoroutine(GameTime());
     }
 
     /// <summary>
@@ -140,7 +138,7 @@ public class UiManager : MonoBehaviour
 
             _eventInterval = _smongTime;
             _eventTimer = 0;
-            _smongAni.Play("SmokeStart");
+            _smongAni.SetBool("isSmoke", true);
         }
     }
 
@@ -162,7 +160,7 @@ public class UiManager : MonoBehaviour
 
             if (_smongImage.enabled)
             {
-                _smongAni.Play("SmokeEnd");
+                _smongAni.SetBool("isSmoke" , false);
             }
 
             _changeState.Value = GameState.Fevar; 
@@ -212,7 +210,7 @@ public class UiManager : MonoBehaviour
 
             if (_smongImage.enabled)
             {
-                _smongAni.Play("SmokeEnd");
+                _smongAni.SetBool("isSmoke", false);
             }
             else 
             {
