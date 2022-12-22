@@ -50,7 +50,7 @@ public class UiManager : MonoBehaviour
     ReactiveProperty<GameState> _changeState = new ReactiveProperty<GameState>();
 
     //扇ゲージの最大
-    const float _fanSliderValueMax = 100;
+    const float _fanSliderValueMax = 120;
 
     //フィーバーゲージの最大
     const float _fevarSliderValueMax = 100;
