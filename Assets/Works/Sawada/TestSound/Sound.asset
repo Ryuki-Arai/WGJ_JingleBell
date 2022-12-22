@@ -30,7 +30,10 @@ MonoBehaviour:
     - Clip: {fileID: 8300000, guid: fd62c59fe2f4fff43a9eed356658fdae, type: 3}
       IsLoop: 1
       Volume: 0.5
-    - Clip: {fileID: 8300000, guid: fd62c59fe2f4fff43a9eed356658fdae, type: 3}
+    - Clip: {fileID: 8300000, guid: 904aa3e4246a20949b7e307a6f959fa5, type: 3}
+      IsLoop: 1
+      Volume: 0.5
+    - Clip: {fileID: 8300000, guid: b7ebf6b728dc54e468e38280d9fb49c6, type: 3}
       IsLoop: 1
       Volume: 0.5
     SE:

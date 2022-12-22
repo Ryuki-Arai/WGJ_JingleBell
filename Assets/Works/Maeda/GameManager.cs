@@ -7,6 +7,7 @@ public class GameManager
     static SoundManager _instanceSM = new SoundManager();
     static SceneManager _instanceScene = null;
 
+    GameState _gameState;
 
     ReactiveProperty<int> _touchCigarettes
         = new ReactiveProperty<int>();
@@ -20,10 +21,12 @@ public class GameManager
     ReactiveProperty<float> _fevarValue
         = new ReactiveProperty<float>();
 
+
+    public GameState State => _gameState;
     public static GameManager InstanceGM => _instanceGM;
 
     public static SoundManager InstanceSM => _instanceSM;
-    public static SceneManager InstanceScene => _instanceScene;
+    public static SceneManager InstanceScene { get => _instanceScene; set => _instanceScene = value; }
 
     public IReadOnlyReactiveProperty<int> TouchCigarettes => _touchCigarettes;
 
@@ -62,15 +65,18 @@ public class GameManager
 
     public void ChangeState(GameState gameState)
     {
+        _gameState = gameState;
         switch (gameState)
         {
             case GameState.WaitGame:
                 break;
 
             case GameState.PlayGame:
+                _instanceSM.CallSound(SoundType.BGM,0);
                 break;
 
             case GameState.Fevar:
+                _instanceSM.CallSound(SoundType.BGM,3);
                 break;
 
             case GameState.Finish:

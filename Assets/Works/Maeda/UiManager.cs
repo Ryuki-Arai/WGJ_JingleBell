@@ -64,6 +64,7 @@ public class UiManager : MonoBehaviour
     //煙草の煙のアニメーション
     Animator _smongAni;
 
+    public float FanSliderValueMax => _fanSliderValueMax;
     public IReadOnlyReactiveProperty<GameState> ChangeState => _changeState;
 
     private void Start()
