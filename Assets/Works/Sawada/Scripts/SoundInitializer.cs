@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundInitializer : MonoBehaviour
 {
+    [SerializeField]
+    int soundNum = 0;
     [SerializeField,Tooltip("ƒTƒEƒ“ƒh‚Ìî•ñ‚ğ‚ÂScriptableObject")] 
     SoundScriptable _soundScriptableObj = null;
 
@@ -13,5 +15,7 @@ public class SoundInitializer : MonoBehaviour
         {
             GameManager.InstanceSM.SoundDataBase = _soundScriptableObj;
         }
+        GameManager.InstanceSM.CallSound(SoundType.BGM, soundNum);
+        Destroy(gameObject);
     }
 }
