@@ -12,7 +12,7 @@ public class UiManager : MonoBehaviour
     ResultChange _resultChange;
 
     [SerializeField, Header("リザルトのキャンバス")]
-    ResultChange _resultCanvas;
+    Canvas _resultCanvas;
 
     [SerializeField, Header("スコアを表示するテキスト")]
     Text _scoreText;
@@ -70,7 +70,7 @@ public class UiManager : MonoBehaviour
     public float FanSliderValueMax => _fanSliderValueMax;
     public IReadOnlyReactiveProperty<GameState> ChangeState => _changeState;
 
-    private void Start()
+    private void Awake()
     {
         _fevarGaugeSlider.maxValue = _fevarSliderValueMax;
         _fanGaugeSlider.maxValue = _fanSliderValueMax;
@@ -78,7 +78,7 @@ public class UiManager : MonoBehaviour
         _timer = _gameTime;
         _timeText.text = _timer.ToString("00");
 
-        _smongAni = _smongImage.GetComponent<Animator>();
+        _smongAni = _smongImage.gameObject.GetComponent<Animator>();
 
         _resultCanvas.enabled = false;
 
