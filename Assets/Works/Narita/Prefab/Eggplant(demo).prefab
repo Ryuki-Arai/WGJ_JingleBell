@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4912808045755736809}
   - component: {fileID: -1584800517497581644}
   - component: {fileID: 6651166300354280424}
+  - component: {fileID: 599085949505515025}
   m_Layer: 0
   m_Name: Eggplant(demo)
   m_TagString: Untagged
@@ -122,3 +123,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &599085949505515025
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450800414859625619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.085
