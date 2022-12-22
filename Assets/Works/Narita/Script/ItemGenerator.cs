@@ -17,9 +17,9 @@ public class ItemGenerator : MonoBehaviour
     int _minProbability = 0;
     [Tooltip("確率の最高値")]
     int _maxProbability = 100;
-    [Tooltip("秒数の最低値")]
+    [SerializeField, Tooltip("秒数の最低値")]
     int _minInterval = 1;
-    [Tooltip("秒数の最高値")]
+    [SerializeField, Tooltip("秒数の最高値")]
     int _maxInterval = 3;
     private void Start()
     {//フィーバー時に使用する配列。
