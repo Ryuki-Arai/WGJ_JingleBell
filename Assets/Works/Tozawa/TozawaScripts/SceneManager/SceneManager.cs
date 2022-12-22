@@ -9,8 +9,6 @@ public class SceneManager : MonoBehaviour
     string _titleSceneName;
     [SerializeField, Header("ゲームシーン名 数字指定時は「２」")]
     string _GameSceneName;
-    [SerializeField, Header("リザルトシーン名 数字指定時は「３」")]
-    string _resultSceneName;
     SceneState _sceneState;
     /// <summary>
     /// 呼ぶときにシーンステイト指定してください
@@ -25,9 +23,6 @@ public class SceneManager : MonoBehaviour
                 break;
             case SceneState.inGame:
                 StartCoroutine(LoadScene(_GameSceneName));
-                break;
-            case SceneState.Result:
-                StartCoroutine(LoadScene(_resultSceneName));
                 break;
         }
     }
