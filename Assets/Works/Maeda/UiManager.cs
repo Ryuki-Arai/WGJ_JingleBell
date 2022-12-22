@@ -8,6 +8,9 @@ using Unity.VisualScripting;
 
 public class UiManager : MonoBehaviour
 {
+    //[SerializeField  , Header("リザルトの結果を表示する")]
+    //ResultChange _resultChange;
+
     [SerializeField, Header("スコアを表示するテキスト")]
     Text _scoreText;
 
@@ -53,10 +56,10 @@ public class UiManager : MonoBehaviour
     float _timer;
 
     //画像を表示する時間
-    float _imageInterval;
+    float _eventInterval;
 
     //画像表示の計測用
-    float _eventTimer;
+    float _eventTimer = 0;
 
     //煙草の煙のアニメーション
     Animator _smongAni;
@@ -68,10 +71,14 @@ public class UiManager : MonoBehaviour
         //_fevarGaugeSlider.maxValue = _fevarSliderValueMax;
         //_fanGaugeSlider.maxValue = _fanSliderValueMax;
 
-        _timer = _gameTime;
-        _timeText.text = _timer.ToString("00");
+        //_timer = _gameTime;
+        //_timeText.text = _timer.ToString("00");
 
-        StartCoroutine(GameTime());
+        _smongAni = _smongImage.GetComponent<Animator>();
+
+        IndicateSmoke();
+
+        //StartCoroutine(GameTime());
     }
 
     /// <summary>
@@ -125,9 +132,13 @@ public class UiManager : MonoBehaviour
     {
         if (_changeState.Value != GameState.Fevar && _changeState.Value != GameState.Finish) 
         {
-            if (_eventTimer > 0) { StartCoroutine(EventTime()); }
+            if (_eventTimer == 0)
+            {
+                _eventInterval = _smongTime;
+                StartCoroutine(EventTime()); 
+            }
 
-            _imageInterval = _smongTime;
+            _eventInterval = _smongTime;
             _eventTimer = 0;
             _smongAni.Play("SmokeStart");
         }
@@ -140,9 +151,13 @@ public class UiManager : MonoBehaviour
     {
         if (_fevarGaugeSlider.value == _fevarSliderValueMax)
         {
-            if (_eventTimer > 0) { StartCoroutine(EventTime()); }
+            if (_eventTimer == 0) 
+            {
+                _eventInterval = _fevarTime;
+                StartCoroutine(EventTime()); 
+            }
 
-            _imageInterval = _fevarTime;
+            _eventInterval = _fevarTime;
             _eventTimer = 0;
 
             if (_smongImage.enabled)
@@ -166,25 +181,32 @@ public class UiManager : MonoBehaviour
 
     private IEnumerator GameTime() 
     {
-        while(_changeState.Value != GameState.Finish) 
+        while(_changeState.Value != GameState.Finish && _timer > 0) 
         {
             yield return new WaitForSeconds(1);
 
             _timer--;
             _timeText.text = _timer.ToString("00");
         }
+
+        if (_timer <= 0) 
+        {
+            //_resultChange.Result();
+            _changeState.Value = GameState.Finish;
+            
+        }
     }
 
     private IEnumerator EventTime()
     {
-        while (_changeState.Value != GameState.Finish && _imageInterval > _eventTimer)
+        while (_changeState.Value != GameState.Finish && _eventInterval > _eventTimer)
         {
             yield return new WaitForEndOfFrame();
 
             _eventTimer += Time.deltaTime;
         }
 
-        if (_imageInterval < _eventTimer) 
+        if (_eventInterval < _eventTimer) 
         {
             _eventTimer = 0;
 
