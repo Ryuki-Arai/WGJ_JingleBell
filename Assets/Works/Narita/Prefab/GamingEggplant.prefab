@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 697591909952279417}
   - component: {fileID: 84652969}
   m_Layer: 0
-  m_Name: GamingEggplant(demo)
+  m_Name: GamingEggplant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,9 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7251242c7b5992a428779412ec2fab8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _probability: 50
+  _probability: 70
   _itemType: 1
-  _score: 0
+  _score: 10
+  _feverScore: 3
 --- !u!50 &697591909952279417
 Rigidbody2D:
   serializedVersion: 4

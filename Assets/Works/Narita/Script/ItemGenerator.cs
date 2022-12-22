@@ -33,7 +33,6 @@ public class ItemGenerator : MonoBehaviour
         if (_timeCount >= _interval)
         {          
             CreateItem();
-            Debug.Log("AAAAAAAAAA");
             _timeCount = 0;
             _interval = Random.Range(_minInterval, _maxInterval);
         }
